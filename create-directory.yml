@@ -1,0 +1,10 @@
+---
+- name: Create the /opt/devops directory
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure /opt/devops directory exists
+      ansible.builtin.file:
+        path: /opt/devops
+        state: directory
+        mode: '0755'
